@@ -87,7 +87,7 @@ class _RegisterState extends State<RegisterView> {
                   padding: new EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
                   child: new TextField(
                     keyboardType: TextInputType.text,
-                    style: new TextStyle(fontSize: 14.0),
+                    style: new TextStyle(fontSize: 14.0, color: Colors.black),
                     decoration: new InputDecoration(
                       hintText: '登入密码',
                       border: InputBorder.none,
@@ -107,7 +107,7 @@ class _RegisterState extends State<RegisterView> {
                   padding: new EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
                   child: new TextField(
                     keyboardType: TextInputType.phone,
-                    style: new TextStyle(fontSize: 14.0),
+                    style: new TextStyle(fontSize: 14.0, color: Colors.black),
                     decoration: new InputDecoration(
                       hintText: '确认密码',
                       border: InputBorder.none,
@@ -141,7 +141,7 @@ class _RegisterState extends State<RegisterView> {
                       //height: 13.0,
                       child: new TextField(
                         keyboardType: TextInputType.phone,
-                        style: new TextStyle(fontSize: 14.0),
+                        style: new TextStyle(fontSize: 14.0, color: Colors.black),
                         decoration: new InputDecoration(
                           hintText: '手机号',
                           border: InputBorder.none,
@@ -160,7 +160,7 @@ class _RegisterState extends State<RegisterView> {
                   padding: new EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
                   child: new TextField(
                     keyboardType: TextInputType.phone,
-                    style: new TextStyle(fontSize: 14.0),
+                    style: new TextStyle(fontSize: 14.0, color: Colors.black),
                     decoration: new InputDecoration(
                       hintText: '校验码',
                       border: InputBorder.none,
@@ -180,7 +180,7 @@ class _RegisterState extends State<RegisterView> {
                   padding: new EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
                   child: new TextField(
                     keyboardType: TextInputType.phone,
-                    style: new TextStyle(fontSize: 14.0),
+                    style: new TextStyle(fontSize: 14.0, color: Colors.black),
                     decoration: new InputDecoration(
                       hintText: '邮箱',
                       border: InputBorder.none,
@@ -200,7 +200,7 @@ class _RegisterState extends State<RegisterView> {
                   padding: new EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
                   child: new TextField(
                     keyboardType: TextInputType.phone,
-                    style: new TextStyle(fontSize: 14.0),
+                    style: new TextStyle(fontSize: 14.0, color: Colors.black),
                     decoration: new InputDecoration(
                       hintText: '邀请码',
                       border: InputBorder.none,
