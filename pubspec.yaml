@@ -38,6 +38,8 @@ flutter:
      - images/ic_register_email.png
      - images/ic_register_invite_code.png
      - images/ic_send.png
+     - images/ic_back_white.png
+     - images/ic_back.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

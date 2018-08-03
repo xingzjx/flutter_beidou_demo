@@ -10,9 +10,9 @@ public class MainActivity extends FlutterActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     GeneratedPluginRegistrant.registerWith(this);
-    if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP)
-    {//API>21,设置状态栏颜色透明
-      getWindow().setStatusBarColor(0);
-    }
+//    if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP)
+//    {//API>21,设置状态栏颜色透明
+//      getWindow().setStatusBarColor(0);
+//    }
   }
 }
