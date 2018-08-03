@@ -1,33 +1,105 @@
-import 'package:demo/home_page.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  //debugPaintSizeEnabled = true;
-  runApp(Test());
+// This app is a stateful, it tracks the user's current choice.
+class BasicAppBarSample extends StatefulWidget {
+  @override
+  _BasicAppBarSampleState createState() => _BasicAppBarSampleState();
 }
 
-class Test extends StatelessWidget {
-  // This widget is the root of your application.
-  
+class _BasicAppBarSampleState extends State<BasicAppBarSample> {
+  Choice _selectedChoice = choices[0]; // The app's "state".
+
+  void _select(Choice choice) {
+    // Causes the app to rebuild with the new _selectedChoice.
+    setState(() {
+      _selectedChoice = choice;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Flutter Demo',
-      theme: new ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or press Run > Flutter Hot Reload in IntelliJ). Notice that the
-        // counter didn't reset back to zero; the application is not restarted.
-        primarySwatch: Colors.red,
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Basic AppBar'),
+          actions: <Widget>[
+            // action button
+            IconButton(
+              icon: Icon(choices[0].icon),
+              onPressed: () {
+                _select(choices[0]);
+              },
+            ),
+            // action button
+            IconButton(
+              icon: Icon(choices[1].icon),
+              onPressed: () {
+                _select(choices[1]);
+              },
+            ),
+            // overflow menu
+            PopupMenuButton<Choice>(
+              onSelected: _select,
+              itemBuilder: (BuildContext context) {
+                return choices.skip(2).map((Choice choice) {
+                  return PopupMenuItem<Choice>(
+                    value: choice,
+                    child: Text(choice.title),
+                  );
+                }).toList();
+              },
+            ),
+          ],
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: ChoiceCard(choice: _selectedChoice),
+        ),
       ),
-      home:Text("aaa"),
-      // home:TutorialHome(),
-      // home: CounterDisplay(count:1),
-      //home: MyListView(),
     );
   }
+}
+
+class Choice {
+  const Choice({this.title, this.icon});
+
+  final String title;
+  final IconData icon;
+}
+
+const List<Choice> choices = const <Choice>[
+  const Choice(title: 'Car', icon: Icons.directions_car),
+  const Choice(title: 'Bicycle', icon: Icons.directions_bike),
+  const Choice(title: 'Boat', icon: Icons.directions_boat),
+  const Choice(title: 'Bus', icon: Icons.directions_bus),
+  const Choice(title: 'Train', icon: Icons.directions_railway),
+  const Choice(title: 'Walk', icon: Icons.directions_walk),
+];
+
+class ChoiceCard extends StatelessWidget {
+  const ChoiceCard({Key key, this.choice}) : super(key: key);
+
+  final Choice choice;
+
+  @override
+  Widget build(BuildContext context) {
+    final TextStyle textStyle = Theme.of(context).textTheme.display1;
+    return Card(
+      color: Colors.white,
+      child: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Icon(choice.icon, size: 128.0, color: textStyle.color),
+            Text(choice.title, style: textStyle),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+void main() {
+  runApp(BasicAppBarSample());
 }

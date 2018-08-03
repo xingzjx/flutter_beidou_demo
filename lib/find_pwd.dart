@@ -1,3 +1,4 @@
+import 'package:demo/register.dart';
 import 'package:flutter/material.dart';
 
 class FindPwd extends StatelessWidget {
@@ -32,6 +33,32 @@ class FindPwdPage extends StatefulWidget {
 }
 
 class FindPwdPageState extends State<FindPwdPage> {
+  void _select() {
+//    new PopupMenuButton(
+//        itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
+//              new PopupMenuItem<String>(value: '选项一的值', child: new Text('选项一')),
+//              new PopupMenuItem<String>(value: '选项二的值', child: new Text('选项二'))
+//            ]);
+
+    new PopupMenuButton<String>(
+        itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
+              new PopupMenuItem<String>(
+                  value: "price", child: new Text('Sort by price')),
+              new PopupMenuItem<String>(
+                  value: "time", child: new Text('Sort by time')),
+            ],
+        onSelected: (String action) {
+          switch (action) {
+            case "price":
+              // do nothing
+              break;
+            case "time":
+              // do nothing
+              break;
+          }
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -207,7 +234,9 @@ class FindPwdPageState extends State<FindPwdPage> {
                       margin: const EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 0.0),
                     ),
                     onTap: () {
-                      setState(() {});
+                      setState(() {
+                        _select();
+                      });
                     },
                   ),
                 )
@@ -276,7 +305,9 @@ class FindPwdPageState extends State<FindPwdPage> {
               padding: const EdgeInsets.fromLTRB(0.0, 7.0, 0.0, 7.0),
             ),
             onTap: () {
-              setState(() {});
+              setState(() {
+                _select();
+              });
             },
           ),
         ],
