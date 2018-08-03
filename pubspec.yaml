@@ -40,6 +40,8 @@ flutter:
      - images/ic_send.png
      - images/ic_back_white.png
      - images/ic_back.png
+     - images/ic_pwd_show.png
+     - images/ic_pwd_unshow.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
