@@ -59,7 +59,7 @@ class _RegisterState extends State<RegisterView> {
             color: Colors.white,
             borderRadius: new BorderRadius.all(new Radius.circular(6.0)),
           ),
-          width: MediaQuery.of(context).size.width * 289/375,
+          width: MediaQuery.of(context).size.width * 289 / 375,
           height: MediaQuery.of(context).size.height * 454 / 667,
           child: new Column(
             children: <Widget>[
@@ -141,7 +141,8 @@ class _RegisterState extends State<RegisterView> {
                       //height: 13.0,
                       child: new TextField(
                         keyboardType: TextInputType.phone,
-                        style: new TextStyle(fontSize: 14.0, color: Colors.black),
+                        style:
+                            new TextStyle(fontSize: 14.0, color: Colors.black),
                         decoration: new InputDecoration(
                           hintText: '手机号',
                           border: InputBorder.none,
@@ -158,39 +159,75 @@ class _RegisterState extends State<RegisterView> {
                   )),
               new Padding(
                   padding: new EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
-                  child: new TextField(
-                    keyboardType: TextInputType.phone,
-                    style: new TextStyle(fontSize: 14.0, color: Colors.black),
-                    decoration: new InputDecoration(
-                      hintText: '校验码',
-                      border: InputBorder.none,
-                      icon: new Image.asset(
-                        'images/ic_register_verify.png',
-                        width: 16.0,
-                        height: 16.0,
+                  child: new Stack(
+                    children: <Widget>[
+                      new TextField(
+                        keyboardType: TextInputType.number,
+                        style:
+                            new TextStyle(fontSize: 14.0, color: Colors.black),
+                        decoration: new InputDecoration(
+                          hintText: '校验码',
+                          border: InputBorder.none,
+                          icon: new Image.asset(
+                            'images/ic_register_verify.png',
+                            width: 16.0,
+                            height: 16.0,
+                          ),
+                        ),
                       ),
-                    ),
+                      new Align(
+                        alignment: Alignment.centerRight,
+                        child: new InkWell(
+                          child: new Container(
+                            decoration: new BoxDecoration(
+                              color: const Color(0xff498fdd),
+                              borderRadius: new BorderRadius.all(
+                                  new Radius.circular(3.0)),
+                            ),
+                            child: new Text(
+                              "发送",
+                              style: new TextStyle(color: Colors.white),
+                            ),
+                            padding:
+                                new EdgeInsets.fromLTRB(10.0, 3.0, 10.0, 3.0),
+                            margin:
+                                new EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+                          ),
+                        ),
+                      )
+                    ],
                   )),
               new Padding(
                   padding: new EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
                   child: new Divider(
                     height: 1.0,
                   )),
-              new Padding(
-                  padding: new EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
-                  child: new TextField(
-                    keyboardType: TextInputType.phone,
-                    style: new TextStyle(fontSize: 14.0, color: Colors.black),
-                    decoration: new InputDecoration(
-                      hintText: '邮箱',
-                      border: InputBorder.none,
-                      icon: new Image.asset(
-                        'images/ic_register_email.png',
-                        width: 16.0,
-                        height: 16.0,
-                      ),
-                    ),
-                  )),
+              new Stack(
+                children: <Widget>[
+                  new Padding(
+                      padding: new EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
+                      child: new TextField(
+                        keyboardType: TextInputType.phone,
+                        style:
+                            new TextStyle(fontSize: 14.0, color: Colors.black),
+                        decoration: new InputDecoration(
+                          hintText: '邮箱',
+                          border: InputBorder.none,
+                          icon: new Image.asset(
+                            'images/ic_register_email.png',
+                            width: 16.0,
+                            height: 16.0,
+                          ),
+                        ),
+                      )),
+                  new Align(
+                      alignment: Alignment.centerRight,
+                      child: new Container(
+                        margin: new EdgeInsets.fromLTRB(0.0, 12.0, 30.0, 0.0),
+                        child: new Text("（选填）",style: new TextStyle(color: const Color(0xff757575)),),
+                      )),
+                ],
+              ),
               new Padding(
                   padding: new EdgeInsets.fromLTRB(30.0, 0.0, 30.0, 0.0),
                   child: new Divider(

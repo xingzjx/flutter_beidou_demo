@@ -202,7 +202,7 @@ class _SignInState extends State<Login> {
                                   child: new Container(
                                     child: new Text("找回密码"),
                                     margin: const EdgeInsets.fromLTRB(
-                                        130.0, 0.0, 0.0, 0.0),
+                                        134.0, 0.0, 0.0, 0.0),
                                   ),
                                   onTap: () {
                                     setState(() {
