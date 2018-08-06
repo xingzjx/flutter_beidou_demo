@@ -53,7 +53,7 @@ class _SignInState extends State<Login> {
     // 登入
     Navigator.of(context).push(MaterialPageRoute(
       builder: (context) {
-        return Main();
+        return MainPage();
       },
     ));
   }

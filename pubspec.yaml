@@ -42,6 +42,16 @@ flutter:
      - images/ic_back.png
      - images/ic_pwd_show.png
      - images/ic_pwd_unshow.png
+     - images/home_wallet_hollow.png
+     - images/home_wallet_solid.png
+     - images/home_store_hollow.png
+     - images/home_store_solid.png
+     - images/home_transfer_hollow.png
+     - images/home_transfer_solid.png
+     - images/home_msg_hollow.png
+     - images/home_msg_solid.png
+     - images/home_me_hollow.png
+     - images/home_me_solid.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
