@@ -50,9 +50,10 @@ class MainPageState extends State<MainPage> {
     _body = new IndexedStack(
       children: <Widget>[
         new WalletHomePage(),
-        new MyHomePage(title: "test"),
-        new MyHomePage(title: "test"),
-        new MyHomePage(title: "test"),
+        new MyHomePage(),
+        new MyHomePage(),
+        new MyHomePage(),
+        new MyHomePage(),
       ],
       index: _tabIndex,
     );
@@ -93,13 +94,13 @@ class MainPageState extends State<MainPage> {
         primarySwatch: Colors.blue,
       ),
       home: new Scaffold(
-          appBar: new AppBar(
-              backgroundColor: Colors.white,
-              centerTitle: true,
-              title: new Text(appBarTitles[_tabIndex],
-                  style: new TextStyle(
-                      fontSize: 18.00, color: const Color(0xff606374))),
-              iconTheme: new IconThemeData(color: Colors.white)),
+//          appBar: new AppBar(
+//              backgroundColor: Colors.white,
+//              centerTitle: true,
+//              title: new Text(appBarTitles[_tabIndex],
+//                  style: new TextStyle(
+//                      fontSize: 18.00, color: const Color(0xff606374))),
+//              iconTheme: new IconThemeData(color: Colors.white)),
           body: _body,
           bottomNavigationBar: new CupertinoTabBar(
             items: <BottomNavigationBarItem>[

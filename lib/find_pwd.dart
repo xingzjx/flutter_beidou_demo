@@ -34,29 +34,30 @@ class FindPwdPage extends StatefulWidget {
 
 class FindPwdPageState extends State<FindPwdPage> {
   void _select() {
+    Navigator.pop(context,"login");
 //    new PopupMenuButton(
 //        itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
 //              new PopupMenuItem<String>(value: '选项一的值', child: new Text('选项一')),
 //              new PopupMenuItem<String>(value: '选项二的值', child: new Text('选项二'))
 //            ]);
 
-    new PopupMenuButton<String>(
-        itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
-              new PopupMenuItem<String>(
-                  value: "price", child: new Text('Sort by price')),
-              new PopupMenuItem<String>(
-                  value: "time", child: new Text('Sort by time')),
-            ],
-        onSelected: (String action) {
-          switch (action) {
-            case "price":
-              // do nothing
-              break;
-            case "time":
-              // do nothing
-              break;
-          }
-        });
+//    new PopupMenuButton<String>(
+//        itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
+//              new PopupMenuItem<String>(
+//                  value: "price", child: new Text('Sort by price')),
+//              new PopupMenuItem<String>(
+//                  value: "time", child: new Text('Sort by time')),
+//            ],
+//        onSelected: (String action) {
+//          switch (action) {
+//            case "price":
+//              // do nothing
+//              break;
+//            case "time":
+//              // do nothing
+//              break;
+//          }
+//        });
   }
 
   @override

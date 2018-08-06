@@ -1,3 +1,4 @@
+import 'package:demo/cash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:demo/my_button.dart';
 
@@ -9,38 +10,57 @@ class WalletHomePage extends StatefulWidget {
 class _WalletHomeState extends State<WalletHomePage> {
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return new Scaffold(
-        body: new Center(
-      // Center is a layout widget. It takes a single child and positions it
-      // in the middle of the parent.
-      child: new Column(
-        // Column is also layout widget. It takes a list of children and
-        // arranges them vertically. By default, it sizes itself to fit its
-        // children horizontally, and tries to be as tall as its parent.
-        //
-        // Invoke "debug paint" (press "p" in the console where you ran
-        // "flutter run", or select "Toggle Debug Paint" from the Flutter tool
-        // window in IntelliJ) to see the wireframe for each widget.
-        //
-        // Column has various properties to control how it sizes itself and
-        // how it positions its children. Here we use mainAxisAlignment to
-        // center the children vertically; the main axis here is the vertical
-        // axis because Columns are vertical (the cross axis would be
-        // horizontal).
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: new Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          new Text(
-            '钱包首页',
-          ),
+          Container(
+              // 头部
+              margin: new EdgeInsets.fromLTRB(18.0, 30.0, 18.0, 18.0),
+              height: 50.0,
+              child: new Stack(
+                children: <Widget>[
+                  new Container(
+                    alignment: Alignment.center,
+                    child: new Text(
+                      "资产",
+                      style: new TextStyle(
+                          fontSize: 18.0, color: Color(0xff606374)),
+                    ),
+                  ),
+                  new InkWell(
+                    onTap: () {
+                      setState(() {
+                        // 闪兑
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) {
+                            return CashPage();
+                          },
+                        ));
+                      });
+                    },
+                    child: new Container(
+                        alignment: Alignment.centerRight,
+                        margin: new EdgeInsets.fromLTRB(0.0, 8.0, 0.0, 0.0),
+                        child: new Column(
+                          children: <Widget>[
+                            Image.asset(
+                              'images/ic_cash.png',
+                              width: 20.0,
+                              height: 20.0,
+                            ),
+                            new Text(
+                              "闪兑",
+                              style: new TextStyle(
+                                  fontSize: 10.0, color: Color(0xff606374)),
+                            ),
+                          ],
+                        )),
+                  ),
+                ],
+              )),
         ],
       ),
-    ) // This trailing comma makes auto-formatting nicer for build methods.
-        );
+    );
   }
 }

@@ -52,6 +52,7 @@ flutter:
      - images/home_msg_solid.png
      - images/home_me_hollow.png
      - images/home_me_solid.png
+     - images/ic_cash.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
